@@ -13,7 +13,27 @@ namespace Reproductor
     {
         private ISampleProvider fuente;
 
-        public int offsetMiliSegundos;
+        public int offsetMiliSegundos
+        {
+            get
+            {
+                return offsetMiliSegundos;
+            }
+            set
+            {
+                if (value > 20000)
+                {
+                    offsetMiliSegundos = 2000;
+                }else if (value < 0)
+                {
+                    offsetMiliSegundos = 0;
+                }
+                else
+                {
+                    offsetMiliSegundos = value;
+                }
+            }
+        }
         List<float> muestras = new List<float>();
         private int tamañoBuffer;
 

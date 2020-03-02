@@ -215,6 +215,11 @@ namespace Reproductor
         private void SldOffsetDelay_ValueChanged(object sender, RoutedPropertyChangedEventArgs<double> e)
         {
             lblOffsetDelay.Text = ((int)(sldOffsetDelay.Value)).ToString();
+            if(efectoDelay !=null)
+            {
+                efectoDelay.offsetMiliSegundos = (int)(sldOffsetDelay.Value);
+            }
         }
+
     }
 }
